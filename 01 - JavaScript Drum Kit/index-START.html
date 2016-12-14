@@ -64,9 +64,7 @@
     if(!audio) return;
     audio.currentTime = 0;
     audio.play();
-    //console.log(key);
     key.classList.add('playing');
-    //key.classList.remove('playing');
   });
 
   function removeTransition(e){
@@ -74,11 +72,9 @@
     this.classList.remove('playing');
   }
 
-
   const keys = document.querySelectorAll('.key');
   keys.forEach(key => key.addEventListener('transitionend',removeTransition));
 </script>
-
 
 </body>
 </html>

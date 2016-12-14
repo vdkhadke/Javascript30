@@ -6,7 +6,6 @@
 </head>
 <body>
 
-
     <div class="clock">
       <div class="clock-face">
         <div class="hand hour-hand" style="transform-origin: 100%; transform: rotate(90deg)"></div>
@@ -14,7 +13,6 @@
         <div class="hand second-hand"></div>
       </div>
     </div>
-
 
   <style>
     html {
@@ -93,7 +91,6 @@
       hourHand.style.background = "green";
       hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
 
-      console.log(date);
     }
     setInterval(setDate, 1000);
     setDate();
