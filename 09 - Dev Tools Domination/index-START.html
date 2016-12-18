@@ -18,29 +18,58 @@
     }
 
     // Regular
+    console.log("Hello");
 
     // Interpolated
+    console.log("Hello I am a %s string" , '💩');
+    //added with ES6 backticks.
+    //console.log(` Hello I am a string ${var}`);
 
     // Styled
+    console.log("%c is this text fugly", "color: green; background: yellow; font-size:20px");
 
     // warning!
+    console.warn("WARNING!!");
 
     // Error :|
+    console.error("SH@T");
 
     // Info
-
+    console.info("This is a info message in public interest");
+    
     // Testing
+    var truthier = false;
+    console.assert( truthier === true , "this assertion will fail");
 
     // clearing
+    //console.clear();
 
     // Viewing DOM Elements
+    console.log(dogs);
+    console.dir(dogs);
+
 
     // Grouping together
-
+    dogs.forEach(dog => {
+      console.groupCollapsed(dog.name);
+      console.log("this is " + dog.name); 
+      console.log(dog.name + " is " + dog.age + " years old.")
+      console.groupEnd(dog.name);
+    });
     // counting
+    console.count("vars");
+    console.count("vars");
+    console.count("vars");
+    console.count("vars");
 
     // timing
-
+    console.time("test timers");
+    fetch("https://api.github.com/users/vdkhadke")
+      .then(data => data.json())
+      .then(data => {
+      console.timeEnd("test timers");
+      console.log(data);
+      });
   </script>
 </body>
 </html>
