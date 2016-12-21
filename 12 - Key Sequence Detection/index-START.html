@@ -7,6 +7,20 @@
 </head>
 <body>
 <script>
+  var pressed = [];
+  //Case for Konami code should be already handled by cornify.js.
+  //const secretCode = "383840403739373966";
+  const secretCode = "valpiv"
+  window.addEventListener('keydown', (e)=> {
+    console.log(e.keyCode);
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+    if(pressed.join('').toLowerCase() === secretCode){
+      console.log(pressed);
+      console.log("WoW WoW WoW" + pressed.join(""));
+      cornify_add();
+    }
+  });
 </script>
 </body>
 </html>
