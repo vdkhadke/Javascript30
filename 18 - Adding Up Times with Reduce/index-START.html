@@ -150,7 +150,7 @@
     <li data-time="4:36">
       Video 48
     </li>
-    <li data-time="3:16">
+    <li dat-time="3:16">
       Video 49
     </li>
     <li data-time="1:10">
@@ -182,6 +182,22 @@
     </li>
 
 <script>
+  const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
+  //two ways to convert nodelist to an array. Using either Array.from or 
+  // [... nodelist];
+  const totalTime = timeNodes.map(node => node.dataset.time)
+  .map(time => {
+    const [mins,secs] = time.split(":").map(parseFloat);
+    return mins * 60 + secs;
+  }).reduce((sum, item) => {return sum + item});
+  
+  const hours = Math.floor(totalTime / 3600);
+
+  const mins = Math.floor((totalTime%3600) / 60);
+  const secs = totalTime % 60;
+
+  console.log(totalTime);
+  console.log(hours +":"+  mins +":"+ secs);
 </script>
 </body>
 </html>
